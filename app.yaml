@@ -1,0 +1,14 @@
+application: polymer-magic-server
+version: 1
+runtime: php55
+api_version: 1
+
+handlers:
+- url: /$
+  script: usage.php
+
+- url: /limits
+  script: limits.php
+
+- url: /.*
+  script: magic.php
