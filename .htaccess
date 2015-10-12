@@ -1,0 +1,4 @@
+RewriteEngine on
+
+RewriteRule ^/?$ usage.php [END]
+RewriteRule ^.+ magic.php [END]

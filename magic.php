@@ -153,7 +153,7 @@ function github($url) {
   if (!$contents) {
     $cmd = "https://api.github.com/$url?access_token=$github_token";
     //
-    $contents = file_get_contents($cmd, false,
+    $contents = @file_get_contents($cmd, false,
       stream_context_create(array('http'=>array('header'=>"User-Agent: Polymer-Magic-Server\r\n"))));
     $github_response = $http_response_header;
     //
@@ -170,7 +170,7 @@ function github($url) {
 function rawgit($path) {
   global $rawgit_response;
   //
-  $contents = file_get_contents("https://cdn.rawgit.com/$path", false,
+  $contents = @file_get_contents("https://cdn.rawgit.com/$path", false,
     stream_context_create(array('http'=>array('header'=>"User-Agent: Polymer-Magic-Server\r\n"))));
   $rawgit_response = $http_response_header;
   //
